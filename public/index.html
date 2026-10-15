@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Upload Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Hacktober Trial</p>
+          <h1>Image Upload & Manager</h1>
+        </div>
+      </header>
+
+      <section class="panel upload-panel">
+        <h2>Upload images</h2>
+        <form id="uploadForm">
+          <div class="field-row">
+            <label>
+              Date
+              <input type="date" id="imageDate" name="date" required />
+            </label>
+
+            <label>
+              Folder name (optional)
+              <input type="text" id="folderName" name="folder" placeholder="e.g. client-visit" />
+            </label>
+          </div>
+
+          <label class="file-label">
+            Select images
+            <input type="file" name="images" accept="image/*" multiple required />
+          </label>
+
+          <button type="submit" class="primary-button">Upload images</button>
+        </form>
+      </section>
+
+      <section class="panel controls-panel">
+        <div class="toolbar">
+          <label>
+            Select folder
+            <select id="folderSelect"></select>
+          </label>
+
+          <button id="printBtn" type="button" class="secondary-button">Print selected folder to PDF</button>
+        </div>
+        <p id="statusMessage" class="status-message" aria-live="polite"></p>
+      </section>
+
+      <section class="panel gallery-panel">
+        <h2>Folder images</h2>
+        <div id="folderGallery" class="gallery"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
